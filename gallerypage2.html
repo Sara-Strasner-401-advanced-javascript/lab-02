@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Second Gallery of Horns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/modules.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+      <!-- Begin/Build the demo without this template. Build it as we refactor (Demo part 3) -->
+  <script id="photo-template2" type="text/x-tmpl-mustache">
+    <section class={{Keyword}}>
+      <h2>Creature Name: {{title}}</h2>
+      <a href="{{pathway}}">
+      <img src="{{pathway}}" title="{{title}}"></>
+      </a>
+      <p>Narration:{{description}}</p>
+      <p>Number of horns : {{horns}}</p>
+    </section>
+  </script>
+
+
+  </head>
+  <body>
+    <header>
+      <h1>The Gallery of Horns</h1>
+      <select id="dropdown">
+        <option value="default">Filter by Keyword</option>
+      </select>
+      <select id ="sortby">
+        <option value="default">Sort by</option>
+        <option value="sortAlphaTitle">Sort by Alpha Title</option>
+        <option value="sortHornNum">Sort by Number of Horns</option>
+      </select>
+      <nav id="links">
+        <ul>
+          <li id="home"><a href="../index.html" >Home</a></li>
+          <li id="gallery2"><a href="gallerypage2.html" >Gallery 2</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id = "gallery">
+ 
+    </main>
+    <footer>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="js/app2.js"></script> 
+  </body>
+</html>

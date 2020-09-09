@@ -2,13 +2,12 @@
 const hornArray = [];
 const sortOptions = ['sortAlphaTitle', 'sortHornNum']
 
-$.ajax('./data/page-1.json', {method: 'GET', dataType: 'JSON'})
+$.ajax('./data/page-2.json', {method: 'GET', dataType: 'JSON'})
   .then(hornInfo => {
     hornInfo.forEach(horn => {
       new HornObject(horn);
     })
-    dropdownRender();
-    sortHornNum();
+   
     hornyObjectRender();
     
   })
@@ -25,7 +24,7 @@ function HornObject (object){
 }
 
 HornObject.prototype.render = function(){
-  const myTemplate = $('#photo-template').html();
+  const myTemplate = $('#photo-template2').html();
   let html = Mustache.render(myTemplate, this);
   return html;
 }
@@ -57,12 +56,12 @@ function filterChange() {
   console.log(this.value);
   $('section').hide();
   console.log('true');
-  $(`${this.value}`).show();
+  $(`section[class = ${this.value}]`).show();
 }
 
-// sort functions
 
 $('#sortby').on('change', sortChange);
+
 function sortAlphaTitle(){
   hornArray.sort((a,b) => {
     a = a.title.toLowerCase();
@@ -82,6 +81,8 @@ function sortHornNum(){
     b= b.horns;
     return b - a;
 })}
+
+
 function sortChange(){
   console.log(this.value);
   
@@ -93,5 +94,6 @@ function sortChange(){
 $('#gallery').empty();
 hornyObjectRender();
 }
+dropdownRender();
 
 console.log(hornArray);
