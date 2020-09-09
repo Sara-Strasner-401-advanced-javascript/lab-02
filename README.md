@@ -26,9 +26,9 @@ Actual time needed to complete: 45 minutes
 make new html and js/update for new json file.
 
 Estimate of time needed to complete: 1 hour
-Start time:
-Finish time:
-Actual time needed to complete:
+Start time: 2:30
+Finish time: 3:20
+Actual time needed to complete: 50 min
 
 ## Feature #5: Templateing
 
@@ -46,9 +46,9 @@ convert index templates to mustache in the head
 change the jquery on app.js to match
 
 Estimate of time needed to complete: 1 hour 20 min
-Start time:
-Finish time:
-Actual time needed to complete:
+Start time: 3:20 
+Finish time: 3:45 
+Actual time needed to complete: 25 minutes
 
 ## Feature #7: sort
 

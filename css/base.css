@@ -5,6 +5,11 @@
 body{
   background-color: thistle;
   font-family: 'Roboto', sans-serif;
-  margin: auto;  
+  margin: auto; 
+}
+
+#gallery{
+  display: flex; 
+  flex-wrap: wrap; 
 }
 
