@@ -46,11 +46,12 @@ function dropdownRender (){
 $('select').on('change', handleChange);
 
 function handleChange() {
-  console.log('It worked!!!');
   console.log(this.value);
+  $('section').hide();
+  hornArray.forEach (object => {
+    if (event.target.value === object.keyword){
+      console.log('true');
+      $(`section[class = ${object.keyword}]`).show();
+    }
+  })
 }
-
-
-// within handleChage
-//by class hide everything that does not have the value of this.value
-// show everything that has the  value of this.value
