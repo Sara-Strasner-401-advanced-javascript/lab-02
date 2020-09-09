@@ -10,9 +10,9 @@ $.ajax('./data/page-1.json', {method: 'GET', dataType: 'JSON'})
     dropdownRender();
     sortHornNum();
     hornyObjectRender();
-    
+
   })
-  
+
 
 
 function HornObject (object){
@@ -57,7 +57,7 @@ function filterChange() {
   console.log(this.value);
   $('section').hide();
   console.log('true');
-  $(`${this.value}`).show();
+  $(`.${this.value}`).show();
 }
 
 // sort functions
@@ -73,7 +73,7 @@ function sortAlphaTitle(){
       return -1;
     } else {
       return 0;
-    };
+    }
   })
 }
 function sortHornNum(){
@@ -81,17 +81,17 @@ function sortHornNum(){
     a= a.horns;
     b= b.horns;
     return b - a;
-})}
+  })}
 function sortChange(){
   console.log(this.value);
-  
+
   sortOptions.forEach(sort =>{
     if(this.value === sort){
       return eval(`${sort}()`);
     }
   })
-$('#gallery').empty();
-hornyObjectRender();
+  $('#gallery').empty();
+  hornyObjectRender();
 }
 
 console.log(hornArray);
