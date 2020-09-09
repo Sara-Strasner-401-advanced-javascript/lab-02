@@ -15,5 +15,5 @@ Actual time needed to complete: 240 minutes
 ## Feature #3: Style the application
 Estimate of time needed to complete: 40 minutes
 Start time: 5:30
-Finish time: 6:15
+Finish time: 6:20
 Actual time needed to complete: 45 minutes
