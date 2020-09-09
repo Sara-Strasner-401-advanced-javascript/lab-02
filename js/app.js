@@ -55,3 +55,7 @@ function handleChange() {
     }
   })
 }
+
+$().ready(() => {
+  $('section img').width(200)
+})
