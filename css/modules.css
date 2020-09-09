@@ -1,20 +1,22 @@
-h1{
-  font-size: 3em;
-  padding: 10px;
+main section {
+  background-color: lavender;
+  height: fit-content;
+  width: 250px;
+  border: 2px black ridge;
+  align-content: center;
+}
+main h2{
+  margin-bottom: 5px;
   text-align: center;
 }
-
-section{
-  padding: 10px;
-  margin: 10px;
-  /* border: 1px solid black; */
-  width: fit-content;
-  float: left;
-  max-width: 300px;
-  height: 350px;
+main p {
+  padding:5px;
+  margin-top: 15px;
+  border: 2px purple ridge;
 }
-
-h2{
-  font-weight: 600;
-  font-size: 1.2em;
+#photo-template{
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+  float: none;
 }

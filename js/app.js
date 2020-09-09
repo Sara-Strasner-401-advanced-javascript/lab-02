@@ -24,7 +24,8 @@ HornObject.prototype.render = function(){
   const $newHornSection = $(`<section class=${this.keyword}>${myTemplate}</section>`);
   $newHornSection.find('h2').text(this.title);
   $newHornSection.find('p').text(this.description);
-  $newHornSection.find('img').attr('src', this.pathway);
+  $newHornSection.find('img').attr('src',this.pathway);
+  $newHornSection.find('a').attr('href',this.pathway);
   $('main').append($newHornSection);
 }
 
