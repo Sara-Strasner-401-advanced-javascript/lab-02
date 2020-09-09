@@ -1,12 +1,14 @@
 'use strict';
 const hornArray = [];
 
-$.ajax('data/page-1.json', {method: 'GET', dataType: 'JSON'})
+$.ajax('./data/page-1.json', {method: 'GET', dataType: 'JSON'})
   .then(hornInfo => {
     hornInfo.forEach(horn => {
-      new HornObject(horn).render();
+      new HornObject(horn);
     })
     dropdownRender();
+    sortAlphaTitle();
+    hornyObjectRender();
   })
 
 
@@ -21,12 +23,14 @@ function HornObject (object){
 
 HornObject.prototype.render = function(){
   const myTemplate = $('#photo-template').html();
-  const $newHornSection = $(`<section class=${this.keyword}>${myTemplate}</section>`);
-  $newHornSection.find('h2').text(this.title);
-  $newHornSection.find('p').text(this.description);
-  $newHornSection.find('img').attr('src',this.pathway);
-  $newHornSection.find('a').attr('href',this.pathway);
-  $('main').append($newHornSection);
+  let html = Mustache.render(myTemplate, this);
+  return html;
+}
+
+function hornyObjectRender(){
+  hornArray.forEach(critter =>{
+    $('#gallery').append(critter.render())
+  })
 }
 
 function dropdownRender (){
@@ -40,20 +44,42 @@ function dropdownRender (){
     const $newDropdownItem = $(`<option></option>`);
     $newDropdownItem.attr('value',temporaryArray[i]);
     $newDropdownItem.text(temporaryArray[i]);
-    $('select').append($newDropdownItem);
+    $('#dropdown').append($newDropdownItem);
   }
 }
 
-$('select').on('change', handleChange);
+$('#dropdown').on('change', filterChange);
 
-function handleChange() {
+function filterChange() {
   console.log(this.value);
   $('section').hide();
-  hornArray.forEach (object => {
-    if (event.target.value === object.keyword){
-      console.log('true');
-      $(`section[class = ${object.keyword}]`).show();
-    }
+  console.log('true');
+  $(`section[class = ${this.value}]`).show();
+}
+
+function sortAlphaTitle(){
+  hornArray.sort((a,b) => {
+    a = a.title.toLowerCase();
+    b = b.title.toLowerCase();
+    if(a > b){
+      return 1;
+    } else if (a < b){
+      return -1;
+    } else {
+      return 0;
+    };
   })
 }
+
+$('#sortby').on('change', sortChange);
+
+function sortChange(){
+  console.log(this.value);
+  $('section').hide();
+  console.log('true');
+  $(`section[class = ${this.value}]`).show();
+}
+
+console.log(hornArray)
+
 

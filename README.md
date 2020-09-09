@@ -36,9 +36,9 @@ convert index templates to mustache in the head
 change the jquery on app.js to match
 
 Estimate of time needed to complete: 1 hour 20 min
-Start time:
-Finish time:
-Actual time needed to complete:
+Start time:1:10
+Finish time: 1:55
+Actual time needed to complete: 45 min
 
 ## Feature #6: flexbox styling
 
@@ -56,6 +56,6 @@ convert index templates to mustache in the head
 change the jquery on app.js to match
 
 Estimate of time needed to complete: 45 min
-Start time: 12:40
+Start time: 12:40- 105
 Finish time:
 Actual time needed to complete:

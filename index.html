@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/modules.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+      <!-- Begin/Build the demo without this template. Build it as we refactor (Demo part 3) -->
+  <script id="photo-template" type="text/x-tmpl-mustache">
+    <section class={{Keyword}}>
+      <h2>Creature Name: {{title}}</h2>
+      <a href="{{pathway}}">
+      <img src="{{pathway}}" title="{{title}}"></>
+      </a>
+      <p>Narration:{{description}}</p>
+      <p>Number of horns : {{horns}}</p>
+    </section>
+  </script>
+
+
   </head>
   <body>
     <header>
@@ -15,19 +30,20 @@
       <select id="dropdown">
         <option value="default">Filter by Keyword</option>
       </select>
+      <select id ="sortby">
+        <option value="default">Sort by</option>
+        <option value="title">Sort by Alpha Title</option>
+        <option value="horns">Sort by Number of Horns</option>
+      </select>
     </header>
-    <main>
-      <section id="photo-template">
-        <h2></h2>
-        <a href="">
-        <img src="" alt="">
-        </a>
-        <p></p>
-      </section>
+    <main id = "gallery">
+ 
     </main>
     <footer>
     </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
     <script src="js/app.js"></script> 
   </body>
 </html>
