@@ -56,6 +56,6 @@ convert index templates to mustache in the head
 change the jquery on app.js to match
 
 Estimate of time needed to complete: 45 min
-Start time: 12:40- 105
-Finish time:
-Actual time needed to complete:
+Start time: 12:40- 1:05
+Finish time: 2:00 - 2:50
+Actual time needed to complete: 1hour 15 min

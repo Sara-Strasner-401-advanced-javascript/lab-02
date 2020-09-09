@@ -1,5 +1,6 @@
 'use strict';
 const hornArray = [];
+const sortOptions = ['sortAlphaTitle', 'sortHornNum']
 
 $.ajax('./data/page-1.json', {method: 'GET', dataType: 'JSON'})
   .then(hornInfo => {
@@ -7,9 +8,10 @@ $.ajax('./data/page-1.json', {method: 'GET', dataType: 'JSON'})
       new HornObject(horn);
     })
     dropdownRender();
-    sortAlphaTitle();
     hornyObjectRender();
+    
   })
+  
 
 
 function HornObject (object){
@@ -57,6 +59,9 @@ function filterChange() {
   $(`section[class = ${this.value}]`).show();
 }
 
+
+$('#sortby').on('change', sortChange);
+
 function sortAlphaTitle(){
   hornArray.sort((a,b) => {
     a = a.title.toLowerCase();
@@ -70,16 +75,24 @@ function sortAlphaTitle(){
     };
   })
 }
+function sortHornNum(){
+  hornArray.sort((a, b) => {
+    a= a.horns;
+    b= b.horns;
+    return b - a;
+})}
 
-$('#sortby').on('change', sortChange);
 
 function sortChange(){
   console.log(this.value);
-  $('section').hide();
-  console.log('true');
-  $(`section[class = ${this.value}]`).show();
+  
+  sortOptions.forEach(sort =>{
+    if(this.value === sort){
+      return eval(`${sort}()`);
+    }
+  })
+$('#gallery').empty();
+hornyObjectRender();
 }
 
-console.log(hornArray)
-
-
+console.log(hornArray);
